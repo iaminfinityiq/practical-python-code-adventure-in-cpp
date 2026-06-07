@@ -14,7 +14,7 @@ $(wildcard $(1)/*.cpp) $(wildcard $(1)/*.cc) $(wildcard $(1)/*.cxx) \
 $(foreach d,$(wildcard $(1)/*),$(call find_cpp_sources,$(d)))
 endef
 
-SRC_FILES := $(call find_cpp_sources,$(SRC_DIR))
+SRC_FILES := $(call find_cpp_sources,$(SRC_DIR)) ../../helpers/helpers.cpp
 OBJ_FILES := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,\
                $(patsubst $(SRC_DIR)/%.cc,$(OBJ_DIR)/%.o,\
                  $(patsubst $(SRC_DIR)/%.cxx,$(OBJ_DIR)/%.o,$(SRC_FILES))))

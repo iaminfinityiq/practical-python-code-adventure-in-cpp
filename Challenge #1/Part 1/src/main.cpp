@@ -1,19 +1,10 @@
-#include <iostream>
-#include <string>
+#include "../../../helpers/helpers.hpp"
 #include <unordered_map>
-#include <cstdio>
-
-void setup() {
-    std::ios_base::sync_with_stdio(false);
-    std::cin.tie(nullptr);
-    std::cout.tie(nullptr);
-    std::freopen("input.INP", "r", stdin);
-    std::freopen("output.OUT", "w", stdout);
-}
 
 int main() {
     setup();
 
+    // List out all of the possible morse codes as shown in the problem
     std::unordered_map<std::string, char> morse_map = {
         {"._", 'A'},
         {"_...", 'B'},
@@ -47,29 +38,25 @@ int main() {
         {"_...._", '-'}
     };
 
-    std::string sentence = "";
+    std::string sentence = ""; // Initializes the variable
     while (true) {
         std::string line;
-        std::getline(std::cin, line);
+        std::getline(std::cin, line); // Get each line
 
         if (line == "") {
+            // If there is no more input, then break out
             break;
         }
 
-        std::string word = "";
-        std::string current_token = "";
-        for (char &c : line + " ") {
-            if (c == ' ' && current_token != "") {
-                word += morse_map[current_token];
-                current_token = "";
-            } else {
-                current_token += c;
-            }
+        std::string word = ""; // Initializes the word
+        std::vector<std::string> tokens = string::split(line); // Splits the line into "characters" which is represented by morse
+        for (const std::string &token : tokens) {
+            word += morse_map[token]; // Adds each character to the word
         }
 
-        sentence += word + " ";
+        sentence += word + " "; // Adds the word into the variable
     }
 
-    std::cout << sentence;
+    std::cout << sentence; // Our result is here
     return 0;
 }
