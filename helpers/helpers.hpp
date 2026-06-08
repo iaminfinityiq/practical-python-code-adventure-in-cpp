@@ -16,7 +16,7 @@ namespace string {
      * @param delimeter character used to split (default space)
      * @return A list of words
      * 
-     * This is used in Challenge #1 Part 1 and Challenge #1 Part 2
+     * This is used in Challenge #1 Part 1, Challenge #1 Part 2 and Challenge #2 Part 1
      */
     std::vector<std::string> split(const std::string &s, const char delimeter = ' ');
 
