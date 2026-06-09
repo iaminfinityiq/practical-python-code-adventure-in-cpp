@@ -27,9 +27,18 @@ namespace utf8 {
      * @param s input string
      * @return The `std::u32string`
      * 
-     * This is used in Challenge #1 Part 1
+     * This is used in Challenge #1 Part 1 and Challenge #1 Part 2
      */
     std::u32string utf8_to_u32(const std::string &s);
+
+    /**
+     * Takes in input as a line and returns the `std::u32string`
+     * 
+     * @return The input line in `std::u32string`
+     * 
+     * This is used in Challenge #1 Part 2
+     */
+    std::u32string input_getline();
 }
 
 /**

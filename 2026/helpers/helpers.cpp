@@ -60,6 +60,13 @@ namespace utf8 {
 
         return result; // Our result is here
     }
+
+    std::u32string input_getline() {
+        std::string input; // Initializes the input variable as std::string
+        std::getline(std::cin, input); // Gets the line input
+        std::u32string returned = utf8_to_u32(input); // Converts the input line to `std::u32string`
+        return returned;
+    }
 }
 
 void setup() {
