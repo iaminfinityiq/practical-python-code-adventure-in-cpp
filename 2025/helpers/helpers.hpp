@@ -8,6 +8,7 @@
 using unicode_char = char32_t;
 using char_t = unsigned char;
 
+// Namespace for string manipulations
 namespace string {
     /**
      * Splits the string into words separated by the delimiter.
@@ -44,6 +45,7 @@ namespace string {
     std::string replace(std::string s, const std::string replaced, const std::string into);
 };
 
+// Namespace for UTF8 string manipulations
 namespace utf8 {
     /**
      * Converts an UTF8 string (on std::string) to a `std::u32string`
